@@ -11,6 +11,8 @@ class LinearEquationService
     calculation_result
   end
 
+  private
+
   def converting_values
     a_coefficient.transform_values!(&:to_i)
     b_coefficient.transform_values!(&:to_i)
