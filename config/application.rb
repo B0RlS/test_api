@@ -24,6 +24,13 @@ module TestApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.autoload_paths += %W(#{config.root}/app/services)
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options]
+      end
+    end
 
     # Settings in config/environments/* take
     # precedence over those specified here.
