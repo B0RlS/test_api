@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::QuadraticController < ApplicationController
   def index
     solution = QuadraticEquationService.new(equation_params).call
@@ -11,6 +13,7 @@ class Api::V1::QuadraticController < ApplicationController
   private
 
   def equation_params
-    params.require(:equation).permit(:a_coefficient, :b_coefficient, :c_coefficient)
+    params.require(:equation).permit(:a_coefficient,
+                                     :b_coefficient, :c_coefficient)
   end
 end

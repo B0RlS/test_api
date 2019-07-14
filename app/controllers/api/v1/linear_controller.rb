@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::LinearController < ApplicationController
   def index
     solution = LinearEquationService.new(equation_params).call

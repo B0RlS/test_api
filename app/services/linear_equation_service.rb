@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LinearEquationService
   attr_reader :a_coefficient, :b_coefficient
 
