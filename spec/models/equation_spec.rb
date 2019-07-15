@@ -1,7 +1,7 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe Equation, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#coefficients' do
+    it { should validate_presence_of(:coefficients) }
+  end
 end
