@@ -4,23 +4,16 @@ def QuadraticEquationService
   attr_reader :a_coefficient, :b_coefficient, :c_coefficient
 
   def initialize(params)
-    @a_coefficient = params[:a_coefficient]
-    @b_coefficient = params[:b_coefficient]
-    @c_coefficient = params[:c_coefficient]
+    @a_coefficient = params[:a]
+    @b_coefficient = params[:b]
+    @c_coefficient = params[:c]
   end
 
   def call
-    converting_values
     calculation_result
   end
 
   private
-
-  def converting_values
-    a_coefficient.transform_values!(&:to_i)
-    b_coefficient.transform_values!(&:to_i)
-    c_coefficient.transform_values!(&:to_i)
-  end
 
   def calculation_result
     return 'There are no roots in the equation' if equation_discriminant < 0

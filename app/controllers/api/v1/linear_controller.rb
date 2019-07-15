@@ -13,6 +13,6 @@ class Api::V1::LinearController < ApplicationController
   private
 
   def equation_params
-    params.require(:equation).permit(:a_coefficient, :b_coefficient)
+    params.require(:equation).permit(:coefficients)
   end
 end

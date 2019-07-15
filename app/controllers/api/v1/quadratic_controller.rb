@@ -13,7 +13,6 @@ class Api::V1::QuadraticController < ApplicationController
   private
 
   def equation_params
-    params.require(:equation).permit(:a_coefficient,
-                                     :b_coefficient, :c_coefficient)
+    params.require(:equation).permit(:coefficients)
   end
 end
